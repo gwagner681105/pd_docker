@@ -1,2 +1,5 @@
 rsync /srv/salt/* ./salt
-git add salt/*
+git reset HEAD */*
+git reset HEAD *
+git add */*
+git add *
