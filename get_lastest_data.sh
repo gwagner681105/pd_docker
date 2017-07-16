@@ -1,0 +1,1 @@
+rsync /srv/salt/* ./salt
