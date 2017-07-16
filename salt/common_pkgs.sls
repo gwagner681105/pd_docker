@@ -10,16 +10,17 @@ docker:
   service.running:
     - enable: True
 
+docker-py:
+  pip.installed:
+    - name: docker-py
 
-#base_docker_image:
-#  dockerng.image_present:
-#    - name: centis
-#    - tag: latest
 
-#python-pip:
-#  pkg.installed
+download centos image:
+  dockerng.image_present:
+    - force: true
+    - name: centos:latest
 
 #docker-py:
 #  pip.installed:
 #    - require:
-#      - pkg: python-pip
+#      - pkg: python2-pip

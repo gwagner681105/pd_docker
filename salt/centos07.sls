@@ -1,18 +1,15 @@
-{% set lvm_mount = '/pd_docker_lvm_mount' %}
+{% set lvm_mount = '/pd_data' %}
+{% set host_graphite_dir = '/pd_data/graphite' %}
 
 
 pd_lvm_mount_folder:
   file.directory:
-    - name: {{lvm_mount}}
+    - name: {{lvm_mount}} 
+    - name: {{host_graphite_dir}}
     - user: root
     - group: root
     - dir_mode: 755
     - file_mode: 644
-    - recurse:
-      - user
-      - group
-      - mode
-      - ignore_dirs
 
 selinux_allow_docker_mount_access:
   cmd.run:
